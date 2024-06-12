@@ -12,4 +12,3 @@ Projeto de um sistema de controle de nível de um reservatório de água.
 - Felippe de Moura Sanabria (felippesanabria@alunos.utfpr.edu.br)
 - Kamila Luiza Cerqueira (kamilacerqueira@alunos.utfpr.edu.br)
 - Luan Santos Moura (moura.2020@alunos.utfpr.edu.br)
-
