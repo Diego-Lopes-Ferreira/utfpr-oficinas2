@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta id="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRUPO 4 - OFICINAS 2</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="./chart.js"></script>       <!-- https://www.chartjs.org -->
+  <script defer src="./aes.js"></script>         <!-- https://github.com/ihsmarkitosi/CryptoJS-v3.1.2 -->
+  <script defer src="./sha256.min.js"></script>  <!-- https://github.com/emn178/js-sha256 -->
+  <script defer src="./myserial.js"></script>
+  <script defer src="./main.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <main>
+      <div class="split_h_1_5">
+        <section id="sys_automatic">
+          <!-- <label for="sys_level_input_name">Nivel Real:</label>
+          <p> <span id="sys_level_value">100</span>% </p> -->
+          <!-- <input disabled orient="vertical" type="range" min="0" max="100" id="sys_level_input_name"> -->
+          <canvas id="sys_level_real_value_chart" height="300" width="120"></canvas>
+        </section>
+
+        <section>
+          <canvas id="myChart"></canvas>
+        </section>
+      </div>
+
+      <div class="split_h_1_1">
+        <section id="sys_file">
+          <p>CAMINHO DO ARQUIVO:</p>
+
+          <p>Arquivo atual: <span id="arquivo_label_caminho">Nenhum Arquivo Selecionado</span></p>
+
+          <!-- <label for="batata" class="btn">Editar Caminho do Arquivo</label> -->
+          <input type="file" name="batata" id="arquivo_caminho">
+          <button class="btn" id="arquivo_btn_carregar">Carregar</button>
+        </section>
+
+        <section id="sys_password">
+          <form action="javascript:void(0);">
+            <p>SENHA:</p>
+
+            <label for="arquivo_senha">Senha atual</label>
+            <input type="password" id="arquivo_senha">
+
+            <button class="btn" id="arquivo_btn_salvar">Salvar</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <aside>
+      <section>
+        <button class="btn" style="display: inline;" id="arduino_conn">Conectar Arduino</button>
+        <button class="btn" style="display: inline;" id="arduino_dcon">Desconectar Arduino</button>
+      </section>
+      <section>
+        <p>MODO DE OPERAÇÃO</p>
+        <p>Status: <span id="sys_automatic_status">automático</span></p>
+        <p class="info">O nível está sendo ajustado de forma automática de acordo com o objetivo.</p>
+        <div class="split_h_1_1_1">
+          <p>MANUAL</p>
+          <label class="switch">
+            <input type="checkbox" checked id="automatico_switch">
+            <span class="slider"></span>
+          </label>
+          <p>AUTOMÁTICO</p>
+        </div>
+      </section>
+
+      <section id="sys_automatic" class="">
+        <p style="grid-column: span 2">CONFIGRAÇÕES DO MODO AUTOMÁTICO</p>
+        <div class="wrapper_setpoint_selector">
+          <label for="sys_setpoint_max_name" style="grid-column: span 3">
+            Nível Objetivo: <span id="sys_setpoint_max_value">100</span>%
+          </label>
+
+          <button id="nivel_obj_btn_sub" class="btn btn_square">-</button>
+          <input id="nivel_obj_input" type="number" id="sys_setpoint_max_name" max="100" min="0" disabled>
+          <button id="nivel_obj_btn_add" class="btn btn_square">+</button>
+        </div>
+      </section>
+
+      <section>
+        <p>CONFIGURAÇÕES MODO MANUAL</p>
+        <p>Atuador da Entrada: <span id="">ligado</span></p>
+        <div class="split_h_1_1_1">
+          <p>DESLIGA</p>
+          <label class="switch">
+            <input type="checkbox" checked id="bomba_switch">
+            <span class="slider"></span>
+          </label>
+          <p>LIGA</p>
+        </div>
+      </section>
+    </aside> <!-- LATERAL -->
+
+  </div>
+</body>
+
+</html>
